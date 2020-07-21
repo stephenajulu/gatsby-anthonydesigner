@@ -1,11 +1,20 @@
 import React from 'react';
-import Header from '../components/header';
+import PropTypes from 'prop-types';
+import Navigation from '../components/navigation';
+import Scroller from '../components/scroller';
 import './style/style.scss';
 
-function Layout() {
-  return <Header />;
+function Layout({ children }) {
+  return (
+    <Scroller>
+      <Navigation />
+      <div className="container">{children}</div>
+    </Scroller>
+  );
 }
 
-Layout.propTypes = {};
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;

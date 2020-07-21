@@ -1,0 +1,39 @@
+@import '../../layout/style/base/breakpoints';
+
+.content {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 95rem;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+
+  @include media-breakpoint-up($breakpoint-xs) {
+    max-width: 96.25rem;
+    padding-right: 1.875rem;
+    padding-left: 1.875rem;
+  }
+
+  @include media-breakpoint-up($breakpoint-md) {
+    max-width: 100rem;
+    padding-right: 3.75rem;
+    padding-left: 3.75rem;
+  }
+
+  .content-lining {
+    display: grid;
+    --gap: 1.25rem;
+    grid-template-columns: repeat(var(--cols, 2), 1fr);
+    margin-top: -3.75rem;
+    grid-column-gap: var(--gap);
+    grid-row-gap: var(--gap);
+
+    @include media-breakpoint-up($breakpoint-xs) {
+      --cols: 3;
+    }
+
+    @include media-breakpoint-up($breakpoint-sm) {
+      --gap: 1.875rem;
+    }
+  }
+}
